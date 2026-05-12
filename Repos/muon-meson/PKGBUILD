@@ -1,0 +1,139 @@
+# Maintainer: Eric Engestrom <aur [at] engestrom [dot] ch>
+
+pkgname=muon-meson-git
+pkgver=0.6.0
+pkgrel=1
+pkgdesc="meson implementation in C"
+arch=(x86_64)
+CHOST="${CHOST}"
+CARCH="${CARCH}"
+CC=gcc
+url="https://muon.build"
+license=(GPL3)
+source=("$url/releases/v$pkgver/muon-v$pkgver.tar.gz")
+sha256sums=('3ba00aaf6b3b31dcdfd81cf2e6214cd0a424bbb7fdd200f462bbc78b4fa9219d')
+depends=(pkgconf curl libarchive)
+makedepends=(ninja python-yaml scdoc)
+#checkdepends=(git)
+provides=(muon muon-meson muon-meson-git)
+#conflicts=(meson)
+
+build() {
+  cd "muon-v$pkgver"
+  rm -rf build*
+
+  msg2 "Building stage 1 (bootstrap)"
+  ./bootstrap.sh build-stage1
+
+  msg2 "Building stage 2 (muon from bootstrap)"
+rm -rf subprojects || /bin/true
+  build-stage1/muon-bootstrap setup -w  \
+    -D libarchive=enabled \
+    -D libcurl=enabled \
+    -D libpkgconf=disabled \
+    -D env.PKG_CONFIG=pkgconf \
+    -D muon.pkgconfig=exec \
+    -D man-pages=enabled \
+    -D meson-docs=disabled \
+    -D meson-tests=disabled \
+    -D readline=builtin \
+    -D samurai=enabled \
+    -D static=false \
+    -D tracy=disabled \
+    -D ui=disabled \
+    -D website=disabled \
+    -D buildtype=release \
+    -D c_std=c99  \
+    -D debug=false \
+    -D native_backtrace=disabled \
+    -D "disable-test-languages=['cpp', 'objc']" \
+    -D "python.allow_limited_api=false" \
+    build-stage2
+  ninja -C build-stage2
+
+  msg2 "Building stage 3 (muon from muon)"
+rm -rf subprojects || /bin/true
+  build-stage2/muon setup -w \
+    -D libarchive=enabled \
+    -D libcurl=enabled \
+    -D libpkgconf=disabled \
+    -D env.PKG_CONFIG=pkgconf \
+    -D muon.pkgconfig=exec \
+    -D man-pages=enabled \
+    -D meson-docs=disabled \
+    -D meson-tests=disabled \
+    -D readline=builtin \
+    -D samurai=enabled \
+    -D static=false \
+    -D tracy=disabled \
+    -D ui=disabled \
+    -D website=disabled \
+    -D prefix=/usr \
+    -D b_lto=true \
+    -D b_pie=true \
+\
+    -D b_asneeded=true \
+    -D b_bitcode=false \
+    -D b_colorout=always \
+    -D c_winlibs='[]' \
+    -D build.c_winlibs='[]' \
+    -D cpp_winlibs='[]' \
+    -D vsenv=false \
+    -D build.cpp_winlibs='[]' \
+\
+    -D native_backtrace=disabled \
+    -D c_args="${CFLAGS}" \
+    -D c_link_args="${LDFLAGS}" \
+    -D buildtype=release \
+    -D c_std=c99  \
+    -D debug=false \
+    -D "disable-test-languages=['cpp', 'objc']" \
+    -D vsenv=false  \
+    -D 'pkg_config_path=/etc/build_config.d/pkgconfig.d' \
+    -D "python.allow_limited_api=false" \
+    build
+  ninja -C build
+}
+
+#check() {
+#  # Explicitly chose which test suites to run, to avoid running meson-tests
+#  # and taking a long time to run, but still having a reasonable coverage
+#  # to ensure that the built package works.
+#  cd "muon-v$pkgver/build"
+#  ./muon test -R -v -s fmt -s lang -s muon -s unit -s analyze
+#}
+
+package() {
+  cd "muon-v$pkgver/build" && echo $(pwd) > $srcdir/log
+rm -rf subprojects || /bin/true
+  DESTDIR="$pkgdir" ./muon  \
+  install
+}
+
+#    --backend=ninja  \
+#    -D libarchive=enabled \
+#    -D libcurl=enabled \
+#    -D libpkgconf=enabled \
+#    -D man-pages=enabled \
+#    -D meson-docs=disabled \
+#    -D meson-tests=disabled \
+#    -D readline=builtin \
+#    -D samurai=enabled \
+#    -D static=true \
+#    -D tracy=disabled \
+#    -D ui=disabled \
+#    -D website=disabled \
+#    -D prefix=/usr \
+#    -D b_lto=true \
+#    -D b_pie=true \
+#    -D native_backtrace=disabled \
+#    -D c_args="${CFLAGS}" \
+#    -D c_link_args="${LDFLAGS}" \
+#    -D buildtype=release \
+#    -D c_std=c99  \
+#    -D debug=false \
+#    -D vsenv=false  \
+#    -D pkgconfig.relocatable=false  \
+#    -D 'pkg_config_path=/etc/build_config.d/pkgconfig.d' \
+#    -D 'python.allow_limited_api=false' \
+
