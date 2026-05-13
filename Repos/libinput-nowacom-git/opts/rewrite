@@ -1,0 +1,17 @@
+usage: meson rewrite [-h] [-s SRCDIR] [-V] [-S]
+                     {target,tgt,kwargs,default-options,def,command,cmd} ...
+
+options:
+  -h, --help                            show this help message and exit
+  -s, --sourcedir SRCDIR                Path to source directory.
+  -V, --verbose                         Enable verbose output
+  -S, --skip-errors                     Skip errors instead of aborting
+
+Rewriter commands:
+  Rewrite command to execute
+
+  {target,tgt,kwargs,default-options,def,command,cmd}
+    target (tgt)                        Modify a target
+    kwargs                              Modify keyword arguments
+    default-options (def)               Modify the project default options
+    command (cmd)                       Execute a JSON array of commands

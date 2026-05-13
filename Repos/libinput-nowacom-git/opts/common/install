@@ -1,0 +1,24 @@
+usage: meson install [-h] [-C WD] [--no-rebuild] [--only-changed] [-q]
+                     [--destdir DESTDIR] [-n]
+                     [--skip-subprojects [SKIP_SUBPROJECTS]] [--tags TAGS]
+                     [--strip]
+
+options:
+  -h, --help                            show this help message and exit
+  -C WD                                 directory to cd into before running
+  --no-rebuild                          Do not rebuild before installing.
+  --only-changed                        Only overwrite files that are older than
+                                        the copied file.
+  -q, --quiet                           Do not print every file that was
+                                        installed.
+  --destdir DESTDIR                     Sets or overrides DESTDIR environment.
+                                        (Since 0.57.0)
+  -n, --dry-run                         Doesn't actually install, but print
+                                        logs. (Since 0.57.0)
+  --skip-subprojects [SKIP_SUBPROJECTS]
+                                        Do not install files from given
+                                        subprojects. (Since 0.58.0)
+  --tags TAGS                           Install only targets having one of the
+                                        given tags. (Since 0.60.0)
+  --strip                               Strip targets even if strip option was
+                                        not set during configure. (Since 0.62.0)

@@ -1,0 +1,22 @@
+usage: meson format [-h] [-q | -d | -i] [-r] [-c meson.format] [-e] [-o OUTPUT]
+                    [--source-file-path SOURCE_FILE_PATH]
+                    [sources ...]
+
+positional arguments:
+  sources                              meson source files
+
+options:
+  -h, --help                           show this help message and exit
+  -q, --check-only                     silently exit with 1 if files would be
+                                       modified by meson format
+  -d, --check-diff                     exit with 1 and show diff if files would
+                                       be modified by meson format
+  -i, --inplace                        format files in-place
+  -r, --recursive                      recurse subdirs (requires --check-only or
+                                       --inplace option)
+  -c, --configuration meson.format     read configuration from meson.format
+  -e, --editor-config                  try to read configuration from
+                                       .editorconfig
+  -o, --output OUTPUT                  output file (implies having exactly one
+                                       input)
+  --source-file-path SOURCE_FILE_PATH  path to use, when reading from stdin

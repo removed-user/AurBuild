@@ -1,0 +1,8 @@
+usage: meson reprotest [-h] [--intermediaries] [mesonargs ...]
+
+positional arguments:
+  mesonargs         Arguments to pass to "meson setup".
+
+options:
+  -h, --help        show this help message and exit
+  --intermediaries  Check intermediate files.

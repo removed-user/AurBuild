@@ -1,0 +1,17 @@
+ setup                   Configure the project
+ configure               Change project options
+ dist                    Generate release archive
+ install                 Install the project
+ introspect              Introspect project
+ init                    Create a new project
+ test                    Run tests
+ wrap                    Wrap tools
+ subprojects             Manage subprojects
+ rewrite                 Modify the project definition
+ compile                 Build the project
+ devenv                  Run commands in developer environment
+ env2mfile               Convert current environment to a cross or native file
+ reprotest
+ format                  Test if project builds reproducibly
+ fmt                     Format meson source file
+ #help                    Print help of a subcommand

@@ -1,0 +1,17 @@
+usage: meson devenv [-h] [-C BUILDDIR] [--workdir WORKDIR] [--dump [DUMP]]
+                    [--dump-format {sh,export,vscode}]
+                    ...
+
+positional arguments:
+  command                           Command to run in developer environment
+                                    (default: interactive shell)
+
+options:
+  -h, --help                        show this help message and exit
+  -C BUILDDIR                       Path to build directory
+  --workdir, -w WORKDIR             Directory to cd into before running
+                                    (default: builddir, Since 1.0.0)
+  --dump [DUMP]                     Only print required environment (Since
+                                    0.62.0) Takes an optional file path (Since
+                                    1.1.0)
+  --dump-format {sh,export,vscode}  Format used with --dump (Since 1.1.0)

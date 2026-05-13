@@ -1,0 +1,112 @@
+# Maintainer: ilovemikael <itsmeguys2247 at gmail dot com>
+
+# PKGBUILD 'forked' from electron*-bin [https://aur.archlinux.org/packages/electron40-bin] by
+# Maintainer: Vincent Grande <shoober420@gmail.com>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
+
+pkgname=libinput-nowacom-git
+pkgver=1.31.0.r42.g356c498f
+pkgrel=1
+pkgdesc="Input device management and event handling library - compiled without support for wacom tablets"
+url="https://gitlab.freedesktop.org/libinput/libinput"
+arch=(x86_64)
+license=(MIT)
+depends=('mtdev' 'libevdev' 'glibc')
+# upstream doesn't recommend building docs
+makedepends=('git'  'meson' 'wayland-protocols' 'check') # 'doxygen' 'graphviz' 'python-sphinx' 'python-recommonmark'
+checkdepends=('python-pytest')
+optdepends=(
+'gtk4: libinput debug-gui'
+'python-pyudev: libinput measure'
+'python-libevdev: libinput measure'
+'python-yaml: used by various tools')
+provides=(libinput)
+conflicts=(libinput)
+source=(git+https://gitlab.freedesktop.org/libinput/libinput)
+sha256sums=('SKIP')
+
+pkgver() {
+  cd libinput
+  git describe --long | sed 's/^foo-//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+  arch-meson libinput build \
+    -D udev-dir=/lib/udev \
+    -D documentation=false \
+    -D libwacom=false\
+    # -Db_lto=true -Db_lto_mode=thin -Dc_std=gnu2y -Dcpp_std=gnu++26
+
+-Dautoload-plugins="false"
+-Dcoverity="false"
+-Ddebug-gui="false"
+-Depoll-dir=""
+-Dinstall-tests="false"
+-Dinternal-event-debugging="false"
+-Dlibwacom="false"
+-Dlua-plugins="auto"
+-Dmtdev="false"
+-Dtests="false"
+-Dzshcompletiondir=/etc/completions.d/zsh
+
+  # Print config
+  meson configure build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+
+  install -Dvm644 libinput/COPYING \
+    "$pkgdir/usr/share/licenses/libinput/LICENSE"
+}
+
+#'Use libwacom for tablet identification (default=true)')#:bool       
+#-Dlibwacom="false"
+#'Use mtdev for multitouch protocol A devices (default=true)')#:bool       
+#-Dmtdev="false"
+
+#'Enable the "debug-gui" feature in the libinput tool [default=true]')#:bool       
+#-Ddebug-gui="false"
+
+#'Build the tests [default=true]')#:bool       
+#-Dtests="false"
+
+
+#'Install the libinput test command [default="false]')#:bool
+#-Dinstall-tests="false"
+
+#'Build the documentation [default="false]')#:boo
+#-Ddocumentation="false"
+
+
+#'Enable coverity build fixes, see meson.build for details [default="false]')#:bool
+#-Dcoverity="false"
+
+
+#'Enable additional internal event debug tracing. This will print key values to the logs and thus must never be enabled in a release build')#:bool	
+#-Dinternal-event-debugging="false"
+
+#'Always load plugins from default plugin paths (only if the caller does not do so)')#:bool	
+#-Dautoload-plugins="false"
+
+#'Enable support for Lua plugins');feature
+#-Dlua-plugins="auto"
+
+#'Directory for zsh completion scripts;string; ["no" disables]
+#-Dzshcompletiondir=/etc/completions.d/zsh
+
+#'udev base directory [default=$prefix/lib/udev]');string
+#-Dudev-dir=""
+
+#'libepoll-shim base directory (for non-Linux OS) [default=$prefix]
+
+#-Depoll-dir=""
+
+
+
+

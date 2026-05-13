@@ -1,0 +1,331 @@
+==> Making package: libinput-nowacom-git 1.31.0.r42.g356c498f-1 (Thu 09 Apr 2026 08:02:46 PM EDT)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Retrieving sources...
+  -> Updating libinput git repo...
+warning: redirecting to https://gitlab.freedesktop.org/libinput/libinput.git/
+==> Validating source files with sha256sums...
+    libinput ... Skipped
+==> Removing existing $srcdir/ directory...
+==> Extracting sources...
+  -> Creating working copy of libinput git repo...
+Cloning into 'libinput'...
+done.
+==> Starting pkgver()...
+==> Removing existing $pkgdir/ directory...
+==> Starting build()...
++ echo ''
+
++ exec meson setup --prefix=/usr --libexecdir=lib --sbindir=sbin --buildtype=plain --wrap-mode=nodownload -Dpython.bytecompile=1 build libinput -D udev-dir=/usr/lib/udev -D documentation=false -D libwacom=false -D autoload-plugins=false -D coverity=false -D debug-gui=false -D install-tests=false -D internal-event-debugging=false -D libwacom=false -D lua-plugins=auto -D mtdev=false -D tests=false -D zshcompletiondir=/etc/completions.d/zsh
+The Meson build system
+Version: 1.10.2
+Source dir: /var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/libinput
+Build dir: /var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/build
+Build type: native build
+Project name: libinput
+Project version: 1.31.0
+C compiler for the host machine: cc (gcc 15.2.1 "cc (GCC) 15.2.1 20260209")
+C linker for the host machine: cc ld.bfd 2.46
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Compiler for C supports arguments -Wno-error=deprecated-declarations: YES 
+Compiler for C supports arguments -Wno-unused-parameter: YES 
+Compiler for C supports arguments -Wmissing-prototypes: YES 
+Compiler for C supports arguments -Wstrict-prototypes: YES 
+Compiler for C supports arguments -Wundef: YES 
+Compiler for C supports arguments -Wlogical-op: YES 
+Compiler for C supports arguments -Wpointer-arith: YES 
+Compiler for C supports arguments -Wuninitialized: YES 
+Compiler for C supports arguments -Winit-self: YES 
+Compiler for C supports arguments -Wstrict-prototypes: YES (cached)
+Compiler for C supports arguments -Wimplicit-fallthrough: YES 
+Compiler for C supports arguments -Wredundant-decls: YES 
+Compiler for C supports arguments -Wincompatible-pointer-types: YES 
+Compiler for C supports arguments -Wformat=2: YES 
+Compiler for C supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C supports arguments -Wmissing-declarations: YES 
+Compiler for C supports arguments -fvisibility=hidden: YES 
+Fetching value of define "static_assert" : _Static_assert 
+Header "dirent.h" has symbol "versionsort" : YES 
+Fetching value of define "SYS_pidfd_open" : 434 
+Checking for function "sigabbrev_np" : YES 
+Header "errno.h" has symbol "program_invocation_short_name" : YES 
+Has header "xlocale.h" : NO 
+Checking if "has C23 auto keyword" compiles: NO 
+Checking if "locale.h" links: YES 
+Header "sys/ptrace.h" has symbol "PTRACE_ATTACH" : YES 
+Found pkg-config: YES (/usr/bin/pkg-config) 2.5.1
+Run-time dependency libudev found: YES 261
+Run-time dependency libevdev found: YES 1.13.6
+Library m found: YES
+Library rt found: YES
+Did not find CMake 'cmake'
+Found CMake: NO
+Run-time dependency lua-5.4 found: NO (tried pkgconfig and cmake)
+Run-time dependency lua5.4 found: NO (tried pkgconfig and cmake)
+Run-time dependency lua found: NO (tried pkgconfig and cmake)
+Configuring 80-libinput-device-groups.rules using configuration
+Configuring 90-libinput-fuzz-override.rules using configuration
+Configuring 80-libinput-device-groups-litest.rules using configuration
+Configuring 90-libinput-fuzz-override-litest.rules using configuration
+Header "sys/epoll.h" has symbol "epoll_create1" : YES 
+Configuring test-util-includes-util-backtrace.h.c using configuration
+Configuring test-util-includes-util-bits.h.c using configuration
+Configuring test-util-includes-util-input-event.h.c using configuration
+Configuring test-util-includes-util-list.h.c using configuration
+Configuring test-util-includes-util-files.h.c using configuration
+Configuring test-util-includes-util-macros.h.c using configuration
+Configuring test-util-includes-util-matrix.h.c using configuration
+Configuring test-util-includes-util-prop-parsers.h.c using configuration
+Configuring test-util-includes-util-ratelimit.h.c using configuration
+Configuring test-util-includes-util-stringbuf.h.c using configuration
+Configuring test-util-includes-util-strings.h.c using configuration
+Configuring test-util-includes-util-time.h.c using configuration
+Configuring libinput-version.h using configuration
+Found pkg-config: YES (/usr/bin/pkg-config) 2.5.1
+Program test/test_quirks_files.py found: YES (/var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/libinput/test/test_quirks_files.py)
+Program test/helper-copy-and-exec-from-tmp.sh found: YES (/var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/libinput/test/helper-copy-and-exec-from-tmp.sh)
+Program test/symbols-leak-test found: YES (/var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/libinput/test/symbols-leak-test)
+C++ compiler for the host machine: c++ (gcc 15.2.1 "c++ (GCC) 15.2.1 20260209")
+C++ linker for the host machine: c++ ld.bfd 2.46
+Configuring libinput.1 using configuration
+Configuring libinput-analyze.1 using configuration
+Configuring libinput-analyze-buttons.1 using configuration
+Configuring libinput-analyze-per-slot-delta.1 using configuration
+Configuring libinput-analyze-recording.1 using configuration
+Configuring libinput-analyze-touch-down-state.1 using configuration
+Configuring libinput-debug-events.1 using configuration
+Configuring libinput-debug-tablet.1 using configuration
+Configuring libinput-debug-tablet-pad.1 using configuration
+Configuring libinput-list-devices.1 using configuration
+Configuring libinput-list-kernel-devices.1 using configuration
+Configuring libinput-measure.1 using configuration
+Configuring libinput-measure-fuzz.1 using configuration
+Configuring libinput-measure-touchpad-size.1 using configuration
+Configuring libinput-measure-touchpad-tap.1 using configuration
+Configuring libinput-measure-touchpad-pressure.1 using configuration
+Configuring libinput-measure-touch-size.1 using configuration
+Configuring libinput-quirks.1 using configuration
+Configuring libinput-record.1 using configuration
+Configuring libinput-replay.1 using configuration
+Configuring libinput-test.1 using configuration
+Configuring libinput-quirks-list.1 using configuration
+Configuring libinput-quirks-validate.1 using configuration
+Configuring config.h using configuration
+Build targets in project: 48
+
+libinput 1.31.0
+
+  Plugins
+    Plugins enabled         : NO
+    Autoload plugins        : NO
+    Lua Plugin support      : NO
+
+  Tests
+    Tests enabled           : NO
+    Install tests           : NO
+
+  User defined options
+    autoload-plugins        : false
+    buildtype               : plain
+    coverity                : false
+    debug-gui               : false
+    documentation           : false
+    install-tests           : false
+    internal-event-debugging: false
+    libexecdir              : lib
+    libwacom                : false
+    lua-plugins             : auto
+    mtdev                   : false
+    prefix                  : /usr
+    python.bytecompile      : 1
+    sbindir                 : sbin
+    tests                   : false
+    udev-dir                : /usr/lib/udev
+    wrap_mode               : nodownload
+    zshcompletiondir        : /etc/completions.d/zsh
+
+Found ninja-1.13.2 at /usr/bin/ninja
+Generating targets:   0%|          | 0/48 eta ?                                               Writing build.ninja:   0%|          | 0/177 eta ?                                                 Core properties:
+  Source dir /var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/libinput
+  Build dir  /var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/build
+
+Global build options:
+  
+  Core options                   Current Value                    Possible Values                  Description                                                  
+  --------------                 -------------                    ---------------                  -----------                                                  
+  auto_features                  auto                             [enabled, disabled, auto]        Override value of all 'auto' features                        
+  backend                        ninja                            [ninja, vs, vs2010, vs2012,      Backend to use                                               
+                                                                   vs2013, vs2015, vs2017, vs2019,                                                              
+                                                                   vs2022, vs2026, xcode, none]                                                                 
+  genvslite                      vs2022                           [vs2022, vs2026]                 Setup multiple buildtype-suffixed ninja-backend build        
+                                                                                                   directories, and a [builddir]_vs containing a Visual Studio  
+                                                                                                   meta-backend with multiple configurations that calls into    
+                                                                                                   them                                                         
+  buildtype                      plain                            [plain, debug, debugoptimized,   Build type to use                                            
+                                                                   release, minsize, custom]                                                                    
+  debug                          false                            [True, False]                    Enable debug symbols and other information                   
+  default_library                shared                           [shared, static, both]           Default library type                                         
+  default_both_libraries         shared                           [shared, static, auto]           Default library type for both_libraries                      
+  install_umask                  0022                             [>= 0, <= 511]                   Default umask to apply on permissions of installed files     
+  layout                         mirror                           [mirror, flat]                   Build directory layout                                       
+  optimization                   plain                            [plain, 0, g, 1, 2, 3, s]        Optimization level                                           
+  prefer_static                  false                            [True, False]                    Whether to try static linking before shared linking          
+  strip                          false                            [True, False]                    Strip targets on install                                     
+  unity                          off                              [on, off, subprojects]           Unity build                                                  
+  unity_size                     4                                [>= 2]                           Unity block size                                             
+  warning_level                  2                                [0, 1, 2, 3, everything]         Compiler warning level to use                                
+  werror                         false                            [True, False]                    Treat warnings as errors                                     
+  wrap_mode                      nodownload                       [default, nofallback,            Wrap mode                                                    
+                                                                   nodownload, forcefallback,                                                                   
+                                                                   nopromote]                                                                                   
+  force_fallback_for             []                                                                Force fallback for those subprojects                         
+  vsenv                          false                            [True, False]                    Activate Visual Studio environment                           
+  os2_emxomf                     false                            [True, False]                    Use OMF format on OS/2                                       
+  pkg_config_path                []                                                                List of additional paths for pkg-config to search            
+  cmake_prefix_path              []                                                                List of additional prefixes for cmake to search              
+  
+  Backend options                Current Value                    Possible Values                  Description                                                  
+  -----------------              -------------                    ---------------                  -----------                                                  
+  backend_max_links              0                                [>= 0]                           Maximum number of linker processes to run or 0 for no limit  
+  
+  Base options                   Current Value                    Possible Values                  Description                                                  
+  --------------                 -------------                    ---------------                  -----------                                                  
+  b_colorout                     always                           [auto, always, never]            Use colored output                                           
+  b_lto_threads                  0                                []                               Use multiple threads for Link Time Optimization              
+  b_pie                          false                            [True, False]                    Build executables as position independent                    
+  b_coverage                     false                            [True, False]                    Enable coverage tracking.                                    
+  b_asneeded                     true                             [True, False]                    Use -Wl,--as-needed when linking                             
+  b_thinlto_cache_dir                                                                              Directory to store ThinLTO cache objects                     
+  b_lto                          false                            [True, False]                    Use link time optimization                                   
+  b_lundef                       true                             [True, False]                    Use -Wl,--no-undefined when linking                          
+  b_sanitize                     []                                                                Code sanitizer to use                                        
+  b_thinlto_cache                false                            [True, False]                    Use LLVM ThinLTO caching for faster incremental builds       
+  b_staticpic                    true                             [True, False]                    Build static libraries as position independent               
+  b_ndebug                       false                            [true, false, if-release]        Disable asserts                                              
+  b_pch                          true                             [True, False]                    Use precompiled headers                                      
+  b_pgo                          off                              [off, generate, use]             Use profile guided optimization                              
+  
+  Compiler options               Current Value                    Possible Values                  Description                                                  
+  ------------------             -------------                    ---------------                  -----------                                                  
+  c_args                         [-march=x86-64, -mtune=generic,                                   Extra arguments passed to the c compiler                     
+                                  -O2, -pipe, -fno-plt,                                                                                                         
+                                  -fexceptions,                                                                                                                 
+                                  -Wp,-D_FORTIFY_SOURCE=3,                                                                                                      
+                                  -Wformat, -Werror=format-                                                                                                     
+                                  security, -fstack-clash-                                                                                                      
+                                  protection, -fcf-protection,                                                                                                  
+                                  -fno-omit-frame-pointer, -mno-                                                                                                
+                                  omit-leaf-frame-pointer,                                                                                                      
+                                  -flto=auto]                                                                                                                   
+  c_link_args                    [-Wl,-O1, -Wl,--sort-common,                                      Extra arguments passed to the c linker                       
+                                  -Wl,--as-needed, -Wl,-z,relro,                                                                                                
+                                  -Wl,-z,now, -Wl,-z,pack-                                                                                                      
+                                  relative-relocs, -flto=auto,                                                                                                  
+                                  -march=x86-64, -mtune=generic,                                                                                                
+                                  -O2, -pipe, -fno-plt,                                                                                                         
+                                  -fexceptions,                                                                                                                 
+                                  -Wp,-D_FORTIFY_SOURCE=3,                                                                                                      
+                                  -Wformat, -Werror=format-                                                                                                     
+                                  security, -fstack-clash-                                                                                                      
+                                  protection, -fcf-protection,                                                                                                  
+                                  -fno-omit-frame-pointer, -mno-                                                                                                
+                                  omit-leaf-frame-pointer,                                                                                                      
+                                  -flto=auto]                                                                                                                   
+  c_std                          gnu99                            [none, c89, c99, c11, c17, c18,  c language standard to use                                   
+                                                                   c2x, c23, c2y, gnu89, gnu99,                                                                 
+                                                                   gnu11, gnu17, gnu18, gnu2x,                                                                  
+                                                                   gnu23, gnu2y]                                                                                
+  cpp_args                       [-march=x86-64, -mtune=generic,                                   Extra arguments passed to the cpp compiler                   
+                                  -O2, -pipe, -fno-plt,                                                                                                         
+                                  -fexceptions,                                                                                                                 
+                                  -Wp,-D_FORTIFY_SOURCE=3,                                                                                                      
+                                  -Wformat, -Werror=format-                                                                                                     
+                                  security, -fstack-clash-                                                                                                      
+                                  protection, -fcf-protection,                                                                                                  
+                                  -fno-omit-frame-pointer, -mno-                                                                                                
+                                  omit-leaf-frame-pointer,                                                                                                      
+                                  -Wp,-D_GLIBCXX_ASSERTIONS,                                                                                                    
+                                  -flto=auto]                                                                                                                   
+  cpp_link_args                  [-Wl,-O1, -Wl,--sort-common,                                      Extra arguments passed to the cpp linker                     
+                                  -Wl,--as-needed, -Wl,-z,relro,                                                                                                
+                                  -Wl,-z,now, -Wl,-z,pack-                                                                                                      
+                                  relative-relocs, -flto=auto,                                                                                                  
+                                  -march=x86-64, -mtune=generic,                                                                                                
+                                  -O2, -pipe, -fno-plt,                                                                                                         
+                                  -fexceptions,                                                                                                                 
+                                  -Wp,-D_FORTIFY_SOURCE=3,                                                                                                      
+                                  -Wformat, -Werror=format-                                                                                                     
+                                  security, -fstack-clash-                                                                                                      
+                                  protection, -fcf-protection,                                                                                                  
+                                  -fno-omit-frame-pointer, -mno-                                                                                                
+                                  omit-leaf-frame-pointer,                                                                                                      
+                                  -Wp,-D_GLIBCXX_ASSERTIONS,                                                                                                    
+                                  -flto=auto]                                                                                                                   
+  cpp_std                        none                             [none, c++98, c++03, c++11,      cpp language standard to use                                 
+                                                                   c++14, c++17, c++1z, c++2a,                                                                  
+                                                                   c++20, c++23, c++26, gnu++98,                                                                
+                                                                   gnu++03, gnu++11, gnu++14,                                                                   
+                                                                   gnu++17, gnu++1z, gnu++2a,                                                                   
+                                                                   gnu++20, gnu++23, gnu++26]                                                                   
+  cpp_eh                         default                          [none, default, a, s, sc]        C++ exception handling type.                                 
+  cpp_rtti                       true                             [True, False]                    Enable RTTI                                                  
+  cpp_debugstl                   false                            [True, False]                    STL debug mode                                               
+  cpp_importstd                  false                            [false, true]                    Use #import std.                                             
+  
+  pkgconfig module options       Current Value                    Possible Values                  Description                                                  
+  --------------------------     -------------                    ---------------                  -----------                                                  
+  pkgconfig.relocatable          false                            [True, False]                    Generate pkgconfig files as relocatable                      
+  
+  Directories                    Current Value                    Possible Values                  Description                                                  
+  -------------                  -------------                    ---------------                  -----------                                                  
+  prefix                         /usr                                                              Installation prefix                                          
+  bindir                         bin                                                               Executable directory                                         
+  datadir                        share                                                             Data file directory                                          
+  includedir                     include                                                           Header file directory                                        
+  infodir                        share/info                                                        Info page directory                                          
+  libdir                         lib                                                               Library directory                                            
+  licensedir                                                                                       Licenses directory                                           
+  libexecdir                     lib                                                               Library executable directory                                 
+  localedir                      share/locale                                                      Locale data directory                                        
+  localstatedir                  /var                                                              Localstate data directory                                    
+  mandir                         share/man                                                         Manual page directory                                        
+  sbindir                        sbin                                                              System executable directory                                  
+  sharedstatedir                 /var/lib                                                          Architecture-independent data directory                      
+  sysconfdir                     /etc                                                              Sysconf data directory                                       
+  
+  Testing options                Current Value                    Possible Values                  Description                                                  
+  -----------------              -------------                    ---------------                  -----------                                                  
+  errorlogs                      true                             [True, False]                    Whether to print the logs from failing tests                 
+  stdsplit                       true                             [True, False]                    Split stdout and stderr in test logs                         
+  
+  Project options                Current Value                    Possible Values                  Description                                                  
+  -----------------              -------------                    ---------------                  -----------                                                  
+  autoload-plugins               false                            [True, False]                    Always load plugins from default plugin paths (only if the   
+                                                                                                   caller does not do so)                                       
+  coverity                       false                            [True, False]                    Enable coverity build fixes, see meson.build for details     
+                                                                                                   [default=false]                                              
+  debug-gui                      false                            [True, False]                    Enable the "debug-gui" feature in the libinput tool          
+                                                                                                   [default=true]                                               
+  documentation                  false                            [True, False]                    Build the documentation [default=false]                      
+  epoll-dir                                                                                        libepoll-shim base directory (for non-Linux OS)              
+                                                                                                   [default=$prefix]                                            
+  install-tests                  false                            [True, False]                    Install the libinput test command [default=false]            
+  internal-event-debugging       false                            [True, False]                    Enable additional internal event debug tracing. This will    
+                                                                                                   print key values to the logs and thus must never be enabled  
+                                                                                                   in a release build                                           
+  libwacom                       false                            [True, False]                    Use libwacom for tablet identification (default=true)        
+  lua-plugins                    auto                             [enabled, disabled, auto]        Enable support for Lua plugins                               
+  mtdev                          false                            [True, False]                    Use mtdev for multitouch protocol A devices (default=true)   
+  tests                          false                            [True, False]                    Build the tests [default=true]                               
+  udev-dir                       /usr/lib/udev                                                     udev base directory [default=$prefix/lib/udev]               
+  zshcompletiondir               /etc/completions.d/zsh                                            Directory for zsh completion scripts ["no" disables]         
+
+There are no option augments.
+ninja: Entering directory `/var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/build'
+[1/2] Cleaning custom target directories
+[2/2] Cleaning
+Cleaning... 0 files.
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /usr/bin/ninja -C /var/cache/AurBuild/Repos/asdeps/libinput-nowacom-git/src/build clean
+==> Starting check()...
