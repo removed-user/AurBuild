@@ -1,0 +1,4 @@
+  arch-meson "${SRCDIR}" "${BUILDDIR}" "${_meson_options[@]}" 2>&1 | tee log
+  arch-meson "${_systemd_src_dir}" build "${_meson_options[@]}" $MESON_EXTRA_CONFIGURE_OPTIONS
+  arch-meson "${pkgbase}" build "${_meson_options[@]}"
+  arch-meson pango build "${meson_options[@]}"

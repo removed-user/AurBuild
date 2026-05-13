@@ -1,0 +1,53 @@
+# Maintainer: Casey Riley 
+
+pkgbase=makepkg_extensions_meta
+pkgname=(
+  'makepkg_extensions'
+)
+pkgver=0.0.1A
+pkgrel=1
+pkgdesc="A collection of makepkg scripts, functions, and utils to make it more functional and easier to debug"
+url="https://github.com/removed-user/makepkg_extensions"
+arch=(any)
+license=(LGPL-2.0 or Later)
+depends=('bash' 'ripgrep')
+#makedepends=()
+#checkdepends=()
+optdepends=(
+            'ripgrep'
+            'fzf'
+            'jq'
+          )
+provides=()
+#conflicts=()
+source=(git+https://github.com/removed-user/makepkg_extensions)
+sha256sums=('SKIP')
+# "${FUNCNAME[1]}" refers to the function that it is inside of... 
+# while
+# "${FUNCNAME[1]}" refers to the function that it is inside of... 
+
+# pkgver() {
+#   git describe --long | sed 's/^foo-//;s/\([^-]*-g\)/r\1/;s/-/./g'
+# }
+build() {
+  echo im build 2>&1 | tee "${FUNCNAME[1]}"
+
+}
+
+check() {
+  echo im check 2>&1 | tee "${FUNCNAME[1]}"
+}
+
+package() {
+  echo im package 2>&1 | tee "${FUNCNAME[1]}"
+
+}
+backup=(
+etc/makepkg.conf
+etc/makepkg.d/*
+etc/makepkg.conf.d/*
+)
+  optdepends=(
+              'lz4: Extremely fast compression algorithm'
+              'xz: Library and command line tools for XZ and LZMA compressed files'
+            )

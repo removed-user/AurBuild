@@ -1,0 +1,42 @@
+_backports=()
+_prev_pkgver="${pkgver}"
+_reverts=()
+arch=''
+arch=()
+backup+=()
+backup=()
+backup=''
+conflicts+=()
+conflicts=()
+conflicts=''
+install=''
+license+=()
+license=''
+pkgname=''
+pkgname=()
+pkgrel=''
+pkgver=''
+provides+=()
+provides=''
+provides=()
+replaces=()
+sha256sums=()
+sha512sums=()
+source=()
+url=
+
+# overrides for makepkg options, [like !strip]; that break your package
+options=()
+
+# Mirror fallback URLs — The maintainer of the PKGBUILD's repo
+_url=""
+# All known mirrors (For automatic fallback 
+_mirrors=()
+
+# The main Project-url
+url=
+
+
+
+##PER_PACKAGE
+pkgdesc=''

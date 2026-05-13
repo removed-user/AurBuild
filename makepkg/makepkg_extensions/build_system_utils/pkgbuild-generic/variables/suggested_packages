@@ -1,0 +1,30 @@
+makedepends is/should be a restricted use array with as few/minimal assumptions as possible
+
+
+
+Any packages that are HEAVILY suggested by the maintainer, but not absolutely... 100% required in order for it to be...
+POSSIBLE for the package to compile
+
+Each of these should also go in the optdepends, not makedepends
+
+Example:systemd by default depends on dbus, but instead, one might use dbus-broker, or no dbus at all given that systemd has a private socket with sd_bus
+
+Curl typically depends on openssl, but it actually just depends on "an ssl implementation".
+users may prefer gnutls, wolfssl, libressl, or other
+
+This is something that is especially important in traditional "core packages", the most important system components...
+things like -
+ssl: listed above
+compiler/build tool: gcc,clang,meson,llvm
+
+Display protocol/server: x11, wayland
+The choice of a wayland compositor or xserver 
+
+The graphics libraries, opencl, opengl, etc...
+
+If your package is not a multicast dns tool that uses avahi libs - then avahi is not a dependency
+No matter HOW MUCH you "THINK" that a user should have it installed
+in which case it does NOT go in depends, or makedepends.
+It goes in optdepends and suggested_packages
+
+list goes on and on, basically do not depend on something, just because you depend on one of its transitive dependencies

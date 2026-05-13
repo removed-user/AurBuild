@@ -1,0 +1,12 @@
+This function will go in either the build,package, or package_pkgname section
+Its purpose is to give greater user freedom
+By letting the user decide which program/package can provide or resolve a dependency
+
+Its basically a template for a "virtual package" with some extra logic
+
+Arguments:
+Requirement
+ What your package Actually Requires; ie: some form of ssl
+2 (an array) of packages that can satisfy the dependency
+
+depends_one_of SSL_IMPLEMENTATION providers=(openssl gnutls)
