@@ -1,0 +1,52 @@
+	depends = aquamarine-git
+	depends = cairo
+	depends = glslang
+
+	depends = hyprcursor-git
+	depends = hyprgraphics-git
+	depends = hyprland-guiutils-git
+	depends = hyprlang-git
+	depends = hyprutils-git
+	depends = hyprwire-git
+
+	depends = libdisplay-info
+	depends = libdrm
+	depends = libglvnd
+	depends = libinput
+	depends = libliftoff
+	depends = libx11
+	depends = libxcb
+	depends = libxcomposite
+	depends = libxcursor
+	depends = libxfixes
+	depends = libxkbcommon
+	depends = libxrender
+
+	depends = mesa
+	depends = muparser
+	depends = opengl-driver
+	depends = pango
+	depends = pixman
+	depends = re2
+	depends = util-linux-libs
+	depends = wayland
+	depends = wayland-protocols
+
+	depends = xcb-proto
+	depends = xcb-util
+	depends = xcb-util-errors
+	depends = xcb-util-image
+	depends = xcb-util-keysyms
+	depends = xcb-util-renderutil
+	depends = xcb-util-wm
+
+	depends = xorg-xwayland
+
+	depends = seatd
+	depends = systemd-libs
+	depends = polkit
+	depends = tomlplusplus
+
+	depends = glib2
+	depends = glibc
+	depends = gcc-libs

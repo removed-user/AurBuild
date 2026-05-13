@@ -1,0 +1,16 @@
+pkgbase = minimal-iso-codes
+	pkgdesc = Lists of the country, language, and currency names
+	pkgver = 4.20.1
+	pkgrel = 1
+	url = https://github.com/removed-user/minimal-iso-codes
+	arch = any
+	license = LGPL-2.1-only
+	makedepends = git
+	makedepends = meson
+	makedepends = python
+	provides = minimal-iso-codes
+	provides = iso-codes
+	conflicts = iso-codes
+	source = git+https://github.com/removed-user/minimal-iso-codes
+
+pkgname = minimal-iso-codes

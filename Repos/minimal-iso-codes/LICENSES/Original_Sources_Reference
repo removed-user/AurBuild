@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://gitlab.archlinux.org/archlinux/packaging/packages/iso-codes.git
+	fetch = +refs/heads/main:refs/remotes/origin/main
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+url='https://salsa.debian.org/iso-codes-team/iso-codes'
+source=(git+https://salsa.debian.org/iso-codes-team/iso-codes#tag=v$pkgver)
