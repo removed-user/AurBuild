@@ -1,0 +1,18 @@
+# Maintainer: diced <pranaco2@gmail.com>
+pkgname='libsysprof-capture-stub'
+pkgver=0.1.2
+pkgrel=1
+makedepends=()
+provides=(libsysprof-capture)
+conflicts=(libsysprof-capture)
+arch=('x86_64')
+pkgdesc="Stupid BullShit"
+
+build() {
+	echo stubby
+}
+
+package() {
+	echo CONGRATS
+}
+

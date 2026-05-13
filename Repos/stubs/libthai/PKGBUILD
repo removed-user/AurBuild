@@ -1,0 +1,18 @@
+# Maintainer: diced <pranaco2@gmail.com>
+pkgname='libthai-stub'
+pkgver=0.1.2
+pkgrel=1
+makedepends=()
+provides=(libthai)
+conflicts=(libthai)
+arch=('x86_64')
+pkgdesc="Stupid BullShit"
+
+build() {
+	echo stubby
+}
+
+package() {
+	echo CONGRATS
+}
+

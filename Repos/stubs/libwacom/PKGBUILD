@@ -1,0 +1,21 @@
+# Maintainer: diced <pranaco2@gmail.com>
+pkgbase=stubby
+pkgname=libwacom
+pkgname+="${pkgbase}"-
+pkgver=0.1.2
+pkgrel=1
+makedepends=()
+$(echo "${pkgname}" | sed 's#stubby-##g')
+provides=(           )
+conflicts=(          )
+arch=('x86_64')
+pkgdesc="Stupid BullShit"
+
+build() {
+	echo "${pkgbase}"-"${pkgname}" >b
+}
+
+package() {
+	echo CONGRATS
+}
+
