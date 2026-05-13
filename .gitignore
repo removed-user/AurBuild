@@ -7,3 +7,11 @@ Repos/*/src/
 /Repos/librsvg/
 /Repos/glslang-git/
 /Repos/linux/keys/*
+/makepkg/*/FETCH_HEAD
+/makepkg/*/HEAD
+/makepkg/*/config
+/makepkg/*/description
+/makepkg/*/info
+/makepkg/*/objects
+/makepkg/*/packed-refs
+/makepkg/*/refs
