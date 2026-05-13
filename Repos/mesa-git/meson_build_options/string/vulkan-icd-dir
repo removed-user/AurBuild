@@ -1,0 +1,8 @@
+option(
+  'vulkan-icd-dir',
+  type : 'string',
+  value : '',
+  description : 'Location relative to prefix to put vulkan icds on install. ' +
+                'Default: $datadir/vulkan/icd.d'
+)
+

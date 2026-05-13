@@ -1,0 +1,7 @@
+option(
+  'gallium-rusticl',
+  type : 'boolean',
+  value : false,
+  description : 'build gallium "rusticl" OpenCL frontend.',
+)
+

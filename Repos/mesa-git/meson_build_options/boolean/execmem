@@ -1,0 +1,7 @@
+option(
+  'execmem',
+  type : 'boolean',
+  deprecated : true,
+  description : 'Does nothing, left here for a while to avoid build breakages.',
+)
+

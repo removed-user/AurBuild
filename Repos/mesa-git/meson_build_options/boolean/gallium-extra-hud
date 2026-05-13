@@ -1,0 +1,7 @@
+option(
+  'gallium-extra-hud',
+  type : 'boolean',
+  value : false,
+  description : 'Enable HUD block/NIC I/O HUD status support',
+)
+

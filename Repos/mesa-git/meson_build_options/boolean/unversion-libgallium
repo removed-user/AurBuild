@@ -1,0 +1,8 @@
+option(
+  'unversion-libgallium',
+  type : 'boolean',
+  value : false,
+  description : 'Do not include mesa version in libgallium DSO filename. ' +
+                'Do not enable unless you know what you are doing. Default: false'
+)
+

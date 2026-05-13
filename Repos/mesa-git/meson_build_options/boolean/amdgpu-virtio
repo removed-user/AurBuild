@@ -1,0 +1,6 @@
+option(
+  'amdgpu-virtio',
+  type : 'boolean',
+  value : false,
+  description : 'use experimental virtio backend for radeonsi/radv',
+)

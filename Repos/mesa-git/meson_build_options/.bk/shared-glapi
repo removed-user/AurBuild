@@ -1,0 +1,7 @@
+option(
+  'shared-glapi',
+  type : 'feature',
+  deprecated: true,
+  description : 'Does nothing, left here for a while to avoid build breakages.',
+)
+

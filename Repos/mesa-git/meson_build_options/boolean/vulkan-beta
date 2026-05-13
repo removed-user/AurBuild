@@ -1,0 +1,7 @@
+option(
+  'vulkan-beta',
+  type : 'boolean',
+  value : false,
+  description : 'Build vulkan drivers with BETA extensions enabled.'
+)
+

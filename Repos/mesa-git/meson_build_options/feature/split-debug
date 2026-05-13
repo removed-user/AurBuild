@@ -1,0 +1,6 @@
+option(
+  'split-debug',
+  type : 'feature',
+  value : 'disabled',
+  description : 'split debug information (-gsplit-dwarf compile flag) and debug information in the gdb index format (--gdb-index)',
+)

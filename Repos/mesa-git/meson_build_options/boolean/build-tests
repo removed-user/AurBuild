@@ -1,0 +1,8 @@
+option(
+  'build-tests',
+  type : 'boolean',
+  value : false,
+  description : 'Build unit tests. Currently this will build *all* unit ' +
+                'tests except the ACO tests, which may build more than expected.'
+)
+

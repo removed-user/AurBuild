@@ -1,0 +1,7 @@
+option(
+  'install-precomp-compiler',
+  type : 'boolean',
+  value : false,
+  description : 'Install the drivers internal shader compilers (if needed for cross builds).'
+)
+

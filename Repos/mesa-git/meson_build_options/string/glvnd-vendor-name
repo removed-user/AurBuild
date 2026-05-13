@@ -1,0 +1,7 @@
+option(
+  'glvnd-vendor-name',
+  type : 'string',
+  value : 'mesa',
+  description : 'Vendor name string to use for glvnd libraries'
+)
+

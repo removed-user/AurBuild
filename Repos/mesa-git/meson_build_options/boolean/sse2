@@ -1,0 +1,7 @@
+option(
+  'sse2',
+  type : 'boolean',
+  value : true,
+  description : 'use msse2 flag for x86. Uses sse/sse2 instead of x87. Default: true',
+)
+

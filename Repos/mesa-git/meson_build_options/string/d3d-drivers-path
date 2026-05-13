@@ -1,0 +1,7 @@
+option(
+  'd3d-drivers-path',
+  type : 'string',
+  value : '',
+  description : 'Location of D3D drivers. Default: $libdir/d3d',
+)
+

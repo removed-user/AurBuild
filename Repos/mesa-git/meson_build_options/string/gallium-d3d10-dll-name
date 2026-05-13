@@ -1,0 +1,8 @@
+option(
+  'gallium-d3d10-dll-name',
+  type : 'string',
+  value : 'libgallium_d3d10',
+  description : 'name of gallium d3d10 target DLL built for Windows. ' +
+                'defaults to libgallium_d3d10.dll to match DRI',
+)
+

@@ -1,0 +1,7 @@
+option(
+  'dri-drivers-path',
+  type : 'string',
+  value : '',
+  description : 'Location to install dri drivers. Default: $libdir/dri.'
+)
+

@@ -1,0 +1,8 @@
+option(
+  'static-libclc',
+  type : 'array',
+  value : [],
+  choices : ['spirv', 'spirv64', 'all'],
+  description : 'Link libclc SPIR-V statically.',
+)
+

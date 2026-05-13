@@ -1,0 +1,8 @@
+option(
+  'draw-use-llvm',
+  type : 'boolean',
+  value : true,
+  description : 'Whether to use LLVM for the Gallium draw module, if LLVM ' +
+                'is included.'
+)
+

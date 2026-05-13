@@ -1,0 +1,10 @@
+option(
+  'mesa-clc',
+  type : 'combo',
+  value : 'auto',
+  choices : [
+    'enabled', 'system', 'auto'
+  ],
+  description : 'Build the mesa-clc compiler or use a system version.'
+)
+

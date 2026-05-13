@@ -1,0 +1,8 @@
+option(
+   'allow-kcmp',
+   type : 'feature',
+  deprecated: {'true': 'enabled', 'false': 'disabled'},
+   description : 'Allow using KCMP_FILE to compare file descriptions. ' +
+                 'auto = allowed everywhere except on Android'
+)
+

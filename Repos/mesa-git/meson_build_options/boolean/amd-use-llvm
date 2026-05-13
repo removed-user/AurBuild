@@ -1,0 +1,8 @@
+option(
+  'amd-use-llvm',
+  type : 'boolean',
+  value : true,
+  description : 'Whether to use LLVM for the AMD drivers, if LLVM ' +
+                'is included.'
+)
+

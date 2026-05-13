@@ -1,0 +1,7 @@
+option(
+  'gles-lib-suffix',
+  type : 'string',
+  value : '',
+  description : 'Suffix to append to GLES library names.  Default: none.'
+)
+

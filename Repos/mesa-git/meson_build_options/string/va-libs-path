@@ -1,0 +1,7 @@
+option(
+  'va-libs-path',
+  type : 'string',
+  value : '',
+  description : 'path to put va libraries. defaults to $libdir/dri.'
+)
+

@@ -1,0 +1,7 @@
+option(
+  'gbm',
+  type : 'feature',
+  deprecated: {'true': 'enabled', 'false': 'disabled'},
+  description : 'Build support for gbm platform'
+)
+

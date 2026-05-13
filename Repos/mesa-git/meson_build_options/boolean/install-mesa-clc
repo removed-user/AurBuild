@@ -1,0 +1,7 @@
+option(
+  'install-mesa-clc',
+  type : 'boolean',
+  value : false,
+  description : 'Install the mesa-clc compiler (if needed for cross builds).'
+)
+
