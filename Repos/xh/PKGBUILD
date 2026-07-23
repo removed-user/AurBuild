@@ -1,0 +1,49 @@
+pkgname=xh
+pkgver=0.26.1
+pkgrel=0
+arch=('x86_64')
+makedepends=('cargo-binstall' )
+pkgdesc="Friendly and fast tool for sending HTTP requests"
+url="https://github.com/ducaale/xh"
+license=('MIT')
+conflicts=(xh)
+provides=(xh)
+
+
+CARGO_REGISTRY_DEFAULT=crates.io
+CARGO_BUILD_TARGET=x86_64-unknown-linux-musl
+BINSTALL_DISABLE_TELEMETRY=1
+CARGO_REGISTRY_DEFAULT=crates.io
+
+# sha256sums=('SKIP')
+
+# build() {
+# 
+# 	cd "${pkgname}-${pkgver}"
+# 	./configure --prefix=/usr
+# 	make
+# }
+
+package() {
+[[ $pkgname ]] && rm -rf $pkgname
+[[ pkgname ]] && rm -rf pkgname
+cargo-binstall xh@$pkgver -y \
+	--no-track \
+	--disable-telemetry \
+	--targets $CARGO_BUILD_TARGET \
+	--root pkgname
+
+pwd  >&2 | tee htf
+echo $pkgdir >> htf
+[[ -f xh/bin/xh ]] && echo xh/bin/xh\=yes >> htf
+if [[ -f xh/bin/xh ]]; then
+install -Dm755 ./xh/bin/xh $pkgdir/bin/xh
+elif [[ -f  $srcdir/bin/xh ]]; then
+install -Dm755  $srcdir/bin/xh $pkgdir/usr/bin/xh
+	
+elif [[ -f  pkgname/bin/xh ]]; then
+install -Dm755  pkgname/bin/xh $pkgdir/usr/bin/xh
+  fi 
+}
+
+
