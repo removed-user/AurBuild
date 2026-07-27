@@ -1,0 +1,26 @@
+pam/modules/pam_mkhomedir/mkhomedir_helper.c
+370:15:func() ‘create_homedir_helper’
+
+
+assignment discards ‘const’ qualifier from pointer target type
+pam/modules/pam_env/pam_env.c
+670:13:func() ‘_expand_arg’
+
+assignment discards ‘const’ qualifier from pointer target type
+pam/modules/pam_access/pam_access.c
+950:22:func() ‘network_netmask_match’
+
+
+assignment discards ‘const’ qualifier from pointer target type
+pam/modules/pam_limits/pam_limits.c
+872:14:func() ‘parse_uid_range’
+
+
+pam/modules/pam_namespace/pam_namespace.c
+919:18:func() ‘process_line’
+assignment discards ‘const’ qualifier from pointer target type
+../pam/modules/pam_env/pam_env.c:670:22: error: cast discards ‘const’ qualifier from pointer target type [-Werror=cast-qual]
+../pam/modules/pam_env/pam_env.c:670:22: error: cast discards ‘const’ qualifier from pointer target type [-Werror=cast-qual]
+../pam/modules/pam_env/pam_env.c:670:22: error: cast discards ‘const’ qualifier from pointer target type [-Werror=cast-qual]
+../pam/modules/pam_access/pam_access.c:950:22: error: assignment discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+../pam/modules/pam_limits/pam_limits.c:872:14: error: assignment discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
