@@ -81,5 +81,5 @@ PAM_UNIQUE=(
 '-Dprefix=/usr'
 "-Dc_link_args=${LDFLAGS}"
 )
-
-meson setup --wipe --clearcache --reconfigure  build/ "${subdir:-pam}" "${UNIX_DEFAULT_MESON_DIRS[@]}" "${UNIX_DEFAULT_MESON_CONFIG[@]}" "${PAM_UNIQUE[@]}"
+[[ ! -d build ]] && mkdir build
+meson setup --wipe --clearcache --reconfigure build/ "${subdir:-pam}" "${UNIX_DEFAULT_MESON_DIRS[@]}" "${UNIX_DEFAULT_MESON_CONFIG[@]}" "${PAM_UNIQUE[@]}"
