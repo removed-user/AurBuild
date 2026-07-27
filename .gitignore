@@ -1,7 +1,9 @@
 git_status
 Repos/curl/d/
+Repos/curl/curl/
 Repos/curl/.src/
-Repos/*/src/
+Repos/*/src
+Repos/*/pkg
 /Repos/Nix/nix/src/
 #No Proper Builds yet
 /Repos/librsvg/
