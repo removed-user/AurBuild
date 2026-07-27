@@ -1,13 +1,11 @@
---- /var/cache/AurBuild/Repos/pam/pam/meson.build	2026-07-27 18:09:06.170250449 -0400
-+++ /var/cache/AurBuild/Repos/pam/patches/meson.build.new	2026-07-27 18:11:18.590616963 -0400
 @@ -29,7 +29,7 @@
  endif
- 
- 
+
+
 -cc = meson.get_compiler('c')
 +cc = meson.get_compiler('gcc')
  cdata = configuration_data()
- 
+
  null_dep = dependency('', required: false)
 @@ -139,6 +139,7 @@
    '-Wuninitialized',
@@ -19,8 +17,8 @@
  add_project_arguments(
 @@ -642,17 +643,13 @@
  libpam_inc = include_directories('libpam' / 'include')
- 
- 
+
+
 -subdir('po')
  subdir('libpam_internal')
  subdir('libpam')
